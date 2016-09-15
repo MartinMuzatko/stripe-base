@@ -13,15 +13,12 @@
     }
     li
     {
+        font-size: 1rem;
         display: block;
         a
         {
-            transition: all @duration-action ease;
             .button(@color-dark, invisible);
             margin-top: 0;
-            &:hover {
-                color: @color-dark;
-            }
             &.active {
                 color: @color-secondary;
             }
@@ -49,11 +46,8 @@
             }
             a
             {
-                background: @color-dark-shadow-faded;
+                .button(@color-dark-shadow-faded, aside);
                 margin: 0 0 .7em;
-                padding: .35rem .5rem .15rem;
-                display: inline-block;
-                line-height: 2;
             }
         }
         .toggle-container {
@@ -73,7 +67,7 @@
             span, span:after, span:before {
                 transition: all @duration-collapse ease;
                 //font-size: .55rem;
-                font-size: .5rem;
+                font-size: .66rem;
                 border-radius: 1px;
                 height: @base;
                 width: @base*7;

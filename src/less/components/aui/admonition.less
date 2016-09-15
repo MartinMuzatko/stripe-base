@@ -1,0 +1,53 @@
+/* ========================================
+ADMONITION COMPONENT
+* Defines a rectangular area, used for semantic inline content
+* Such as Tip, Warning, Notes or Information
+* Admonitions guides the user through the rest of the content
+*
+* @type
+======================================== */
+.admonition(@type: info) {
+    padding: 1.25em;
+    margin: 1.5em 0 3em;
+    border-left: @border-width solid;
+    background-color: @color-dark-shadow-faded;
+
+    p {
+        margin: .5em 0;
+    }
+
+    .title {
+        text-transform: uppercase;
+    }
+
+    & when (@type = warning) {
+        border-left-color: @color-aui-warning;
+    }
+    & when (@type = note) {
+        border-left-color: @color-aui-note;
+    }
+    & when (@type = info) {
+        border-left-color: @color-aui-info;
+    }
+    & when (@type = tip) {
+        border-left-color: @color-aui-tip;
+    }
+}
+
+
+.admonition {
+    .admonition(info);
+}
+
+.admonition_warning {
+    .admonition(warning);
+}
+.admonition_note {
+    .admonition(note);
+}
+.admonition_info {
+    .admonition(info);
+}
+.admonition_tip {
+    .admonition(tip);
+}

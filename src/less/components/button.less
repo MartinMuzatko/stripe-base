@@ -12,11 +12,15 @@ BUTTON COMPONENT
     padding: 1em 1rem .9em;
     margin-top: 1em;
     border-radius: .1em;
+    cursor: pointer;
     font-size: 1em;
     line-height: .8em;
     text-transform: uppercase;
-    transition: all @duration-action ease;
+    transition: all @duration-link ease;
     font-family: DINWeb;
+    &:only-child {
+        margin-top: 0;
+    }
     & when (@type = outline) {
         background-color: transparent;
         color: @color-light;
@@ -30,6 +34,15 @@ BUTTON COMPONENT
         background-color: transparent;
         color: @color;
         border: 1px solid transparent;
+    }
+    & when (@type = aside) {
+        background-color: @color;
+        color: @color-dark;
+        border: 1px solid transparent;
+        &:hover {
+            @color-hover: fadein(@color, 20%);
+            background-color: @color-hover;
+        }
     }
     & when (@type = outline-reverse) {
         background-color: transparent;
@@ -48,6 +61,7 @@ BUTTON COMPONENT
         &:hover {
             @color-hover: lighten(@color, 10%);
             background-color: @color-hover;
+            border: 1px solid @color-hover;
             color: contrast(@color-hover, @color-dark, @color-light, 50%);
         }
     }
@@ -86,9 +100,16 @@ BUTTON COMPONENT
 
 .buttons {
     margin-top: @indent-larger;
+    text-align: center;
     .button {
         margin-top: 0 !important;
         margin: 0 @indent-medium/2 @indent-medium;
+    }
+    &:only-child {
+        margin-top: 0;
+        .button {
+            margin: 0 @indent-medium/2;
+        }
     }
 }
 
@@ -96,5 +117,20 @@ div.button {
     all: initial;
     a {
         .button(@color-primary-dark, full);
+    }
+}
+
+.cta_button {
+    .button(@color-primary-dark, full);
+    margin-top: 0;
+
+}
+
+.button.filter.full {
+    cursor: auto;
+    &:hover {
+        background: @color-secondary;
+        color: @color-light;
+        border-color: @color-secondary;
     }
 }

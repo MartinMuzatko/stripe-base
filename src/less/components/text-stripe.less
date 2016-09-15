@@ -6,11 +6,26 @@ TEXT-STRIPE COMPONENT
 .text-stripe(@background: @color-light, @size: 1rem) {
     display: inline;
     background-color: @background;
-    color: contrast(@background, @color-dark, @color-light);
+    color: contrast(@background, @color-dark, @color-light, 25%);
     margin: 0;
-    padding: .2em 0 0 0; //Font specific
     box-shadow: @size 0 0 @background, -@size 0 0 @background;
     position: relative;
     left: @size;
     line-height: 1.5;
+    box-decoration-break: clone; // Fix for Firefox
+}
+
+.text-stripe {
+    &.primary {
+        .text-stripe(@color-primary);
+    }
+    &.secondary {
+        .text-stripe(@color-secondary);
+    }
+    &.dark {
+        .text-stripe(@color-dark);
+    }
+    &.light {
+        .text-stripe(@color-light);
+    }
 }

@@ -1,0 +1,155 @@
+// Content Home
+
+.hidden {
+    display: none;
+}
+
+
+.content
+{
+    .stripe(large, @indent-content);
+
+    footer {
+        margin-top: @indent-larger;
+    }
+}
+
+
+.magnific-popup img {
+    border-radius: @border-width;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all @duration-action ease-in-out;
+}
+
+// Content article
+
+.blog article
+{
+    header {
+        margin-bottom: @indent-larger;
+    }
+}
+
+.blog article > div {
+
+
+    .section [flex="5"] img {
+        border-radius: 100%;
+    }
+    .section .column img {
+        margin: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        color: @color-secondary;
+
+        span {
+            display: block;
+            font-family: @font-light, sans-serif;
+
+            &:after {
+                display: none;
+            }
+        }
+    }
+
+    ul,
+    ol {
+        padding-left: 1.5em;
+    }
+
+    ul {
+        list-style: square;
+
+        &.toc-indentation { // fix toc macro
+            list-style: square !important;
+        }
+    }
+
+    // Images
+
+    img:not(.inline-image) {
+        margin: 1em 0;
+        display: block;
+    }
+
+    ul, ol {
+        img {
+            margin: .75em 0 1.25em 0;
+        }
+        .inline-image {
+            margin: 0;
+        }
+    }
+
+    img {
+        width: auto;
+        display: block;
+    }
+
+    .table-wrap {
+        overflow: auto;
+        max-height: 80vh;
+        margin-bottom: @indent-larger;
+    }
+
+    table img {
+        width: auto;
+        height: auto;
+        margin: 0;
+    }
+
+    table .icon {
+        margin: .35em;
+    }
+
+    img[align=center] {
+        display: block;
+        margin: 0 auto;
+    }
+
+    img[align=left] {
+        float: left;
+        margin: 5px @indent-large @indent-large 0;
+        clear: both;
+    }
+
+    img[align=right] {
+        float: right;
+        margin: 5px 0 @indent-large @indent-large;
+        clear: both;
+    }
+
+    img.emoticon {
+        margin: 0;
+        vertical-align: middle;
+        display: inline-block;
+    }
+
+    p {
+        em {
+            font-style: italic;
+        }
+    }
+
+    // == Macros ===============
+
+    ul, ol {
+        &.toc-indentation { // fix toc macro
+            margin-left: @indent-medium !important;
+        }
+    }
+
+    ol li .admonition,
+    ul li .admonition {
+        margin-top: 0;
+    }
+
+    .refresh-macro, .refresh-issues-bottom {
+        display: none;
+    }
+
+}

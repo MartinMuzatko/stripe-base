@@ -1,0 +1,38 @@
+.panel {
+    padding: 2.5em;
+    margin: 0 0 2em;
+    background-color: @color-dark-shadow-faded;
+    color: @color-dark;
+
+
+    .panelContent {
+
+        p > strong:first-child {
+            display: block;
+            font-family: @font-light, @font-replacement;
+            font-weight: normal;
+            font-size: 1.2em;
+            line-height: 1.8em;
+            text-transform: uppercase;
+            color: @color-secondary;
+        }
+
+        img[align=right] {
+            width: 25%;
+        }
+    }
+
+    &.code
+    {
+        padding: 0;
+        pre {
+            margin: 0;
+            font-size: .8em;
+            line-height: 1.2em;
+            overflow: auto;
+            padding: 1em;
+            border: 1px solid @color-dark-shadow;
+            border-radius: @border-width;
+        }
+    }
+}

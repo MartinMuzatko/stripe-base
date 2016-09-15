@@ -1,4 +1,4 @@
-.pointer(@direction: down, @color: @color-secondary-light) {
+.pointer(@direction: down, @color: @color-secondary) {
     margin-bottom: 4em !important;
     display: flex;
     text-align: center;
@@ -6,11 +6,11 @@
     > * {
         position: relative;
         margin: 0 auto;
-        padding: .75em 1em .5em 1em;
+        padding: 1em 1.25em;
         min-width: 10em;
         background-color: @color;
         text-align: center;
-        color: @color-light;
+        color: contrast(@color-secondary, @color-dark, @color-light, 50%);
         display: inline-block;
 
         &:after

@@ -70,7 +70,7 @@ STRIPE COMPONENT
     }
 }
 
-.striped(@size: @indent-larger, @color-odd: darken(@color-light, 5%), @color-even: @color-light) {
+.striped(@size: @indent-larger, @color-odd: @color-light-darkened, @color-even: @color-light) {
     > *:nth-child(2n+1) {
         .stripe(@size, @indent-primary, @color-odd);
     }
@@ -79,19 +79,31 @@ STRIPE COMPONENT
     }
 }
 
-.stripe.fluid {
-    padding: 0;
-    > * {
-        width: 100%;
-    }
-}
-
-
 .stripe {
+    &.primary {
+        .stripe(medium, medium, @color-primary);
+    }
+    &.secondary {
+        .stripe(medium, medium, @color-secondary);
+    }
+    &.fluid {
+        padding: 0;
+        > * {
+            width: 100%;
+        }
+    }
     &.medium {
         .stripe(large, medium, inherit)
     }
     &.small {
         .stripe(large, small, inherit)
+    }
+    &.condensed {
+        .stripe(medium, small, inherit)
+    }
+    &.fake {
+        visibility: hidden;
+        margin: 0;
+        padding: 0;
     }
 }

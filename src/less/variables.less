@@ -5,12 +5,15 @@
 @color-primary: hsl(60, 71%, 55%);
 @color-primary-light: hsl(74, 64%, 59%);
 @color-primary-dark: hsl(86, 63%, 42%);
+@color-primary-darker: hsl(77, 43%, 36%);
+
 @color-secondary: hsl(198, 100%, 44%);
 @color-secondary-light: hsl(207, 100%, 63%);
 @color-secondary-dark: hsl(201, 15%, 27%);
 
 @color-dark: hsl(201, 15%, 27%);
 @color-light: #FFF;
+@color-light-darkened: darken(@color-light, 5%);
 @color-dark-shadow: fadeout(@color-dark, 50%);
 @color-dark-shadow-faded: fadeout(@color-dark-shadow, 40%);
 @color-light-shadow: fadeout(@color-light, 50%);
@@ -31,15 +34,17 @@
 
 @color-hubspot-error: #B14E4A;
 @color-hubspot-field-background: darken(@color-light-shadow, 8%);
+@color-hubspot-button: #999;
 @color-hubspot-field-text: lighten(@color-dark, 10%);
 
 /*  ========================================
     FONTS
     ======================================== */
 
-@font-light: DINWeb-Light;
-@font-medium: DINWeb-Medium;
-@font-bold: DINWeb-bold;
+@font-light: 'Archivo Narrow';
+@font-medium: @font-light;
+@font-regular: @font-light;
+@font-bold: @font-light;
 @font-replacement: sans serif;
 
 /*  ========================================
@@ -57,18 +62,19 @@
     Z-INDEXES
     ======================================== */
 
-@z-index-overlay: 200;
-@z-index-blanket: 300;
-@z-index-header: 400;
-@z-index-modal: 500;
-@z-index-popup: 600;
-@z-index-edit-button: 1000;
+@z-index-overlay: 100;
+@z-index-popup: 300;
+@z-index-edit-button: 400;
+@z-index-blanket: 500;
+@z-index-header: 600;
+@z-index-modal: 700;
 
 /*  ========================================
     DURATIONS
     ======================================== */
 
-@duration-hover: .1s;
+@duration-hover: .2s;
+@duration-link: @duration-hover;
 @duration-action: .33s;
 @duration-collapse: .5s;
 @duration-animation: 1s;
@@ -90,9 +96,9 @@
 @indent-medium: 1em;
 @indent-small: .25em;
 
-@width-small: 40*16;
-@width-medium: 20*16;
-@width-large: 10*16;
+@width-small: .6;
+@width-medium: .7;
+@width-large: .825;
 
 /*  ========================================
     INDENTATIONS

@@ -33,7 +33,7 @@ CARD COMPONENT
     }
 
     & when (@size = small) {
-        padding: 1em;
+        padding: 1.25em;
     }
     & when (@size = medium) {
         padding: 2.5em;
@@ -50,15 +50,36 @@ CARD COMPONENT
     &.primary {
         .card(@color-primary-dark, medium);
         .button{.button(@color-primary-dark, outline);}
+        &.small {
+            .card(@color-primary-dark, small);
+        }
     }
 
     &.secondary {
         .card(@color-secondary, medium);
         .button{.button(@color-secondary, outline);}
+        &.small {
+            .card(@color-secondary, small);
+        }
     }
 
     &.aside {
         .card(@color-dark-shadow, medium);
         .button{.button(@color-dark-shadow, outline);}
+    }
+}
+
+.card:last-child {
+    margin-bottom: 0;
+}
+
+.card > *:only-child{
+    margin: 0;
+}
+
+.card-stack {
+    margin-bottom: @indent-large;
+    > * {
+        margin-bottom: 0 !important;
     }
 }
